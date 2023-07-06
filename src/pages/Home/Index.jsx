@@ -1,4 +1,6 @@
-function Home() {  
+import './style.css'
+
+export function Home() {  
   return (
     <>
       <h1>Lista de Presenca</h1>
@@ -7,4 +9,4 @@ function Home() {
     </>
   )
 }
-export default Home
+
