@@ -20,17 +20,20 @@ export function Home() {
   };
  
   useEffect(()=>{
-    fetch('https://api.github.com/users/natanaelnogueira17')
-    .then(Response => Response.json())
-    .then(data =>{
+
+    async function fetchData(){
+      const response = await fetch('https://api.github.com/users/natanaelnogueira17');
+      const data = await response.json();
+      console.log("DADOS = >", data);
       setUser({
         name: data.name,
         avatar: data.avatar_url,
-      })
-
-    } )
-
+      });
+    
+    }
+    fetchData();
   }, []);
+  
   return (
     < div className="container">
       <header>
