@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './style.css'
 import { Card } from '../../componentes/card'
 
@@ -17,11 +17,20 @@ export function Home() {
     }
     setStudents(prevState => [...prevState, newStudent])
   };
+ 
+  useEffect(()=>{
+    console.log("foi chamado")
 
+  }, []);
   return (
     < div className="container">
-
-      <h1>Lista de Presença</h1>
+      <header>
+        <h1>Lista de Presença</h1>
+        <div>
+          <strong>Natanael</strong>
+          <img src="https://github.com/natanaelnogueira17.png" alt="foto de perfil" />
+        </div>
+      </header>
 
       <input type="text"
              placeholder="Digite um nome: "
