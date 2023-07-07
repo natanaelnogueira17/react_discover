@@ -12,7 +12,7 @@ export function Home() {
       time: new Date().toLocaleTimeString("pt-br", {
         hour: '2-digit',
         minute: "2-digit",
-        second:"2-digit",
+        second:"2-digit"
       })
     }
     setStudents(prevState => [...prevState, newStudent])
@@ -36,6 +36,7 @@ export function Home() {
       {
         students.map(student => 
         <Card 
+          key = {student.time}
           name={student.name} 
           time={student.time}/>)
       }
